@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		table, th, td {
+		  border:1px solid whitesmoke;
+		}
+		body {
+	  background-image: url("https://img.freepik.com/free-vector/healthcare-medical-with-cardiograph-line_1017-30390.jpg");
+	  background-repeat: no-repeat;
+	  background-attachment: fixed; 
+	  background-size: 100% 100%;
+	}
+	</style>
+<head>
+	<title>Database Page</title>
+</head>
+<body>
+	<h3 style="font-size: 300%;color: whitesmoke;">Patient Profile</h3>
+	<br>
+	<table>
+		<thead>
+			<th style="color: whitesmoke;">Patient Id</th>
+			<th style="color: whitesmoke;">First Name</th>
+			<th style="color: whitesmoke;">Last Name</th>
+			<th style="color: whitesmoke;">Age</th>
+			<th style="color: whitesmoke;">Heart Rate</th>
+            <th style="color: whitesmoke;">Respiration</th>
+            <th style="color: whitesmoke;">SpO2</th>
+            <th style="color: whitesmoke;">Temperature</th>
+            <th style="color: whitesmoke;">Prediction</th>
+            <th style="color: whitesmoke;">Suggestion</th>
+		</thead>
+		{% for data in profiles %}
+		<tbody>
+			<td style="color: whitesmoke;">{{data.inde}}</td>
+			<td style="color: whitesmoke;">{{data.first_name}}</td>
+			<td style="color: whitesmoke;">{{data.last_name}}</td>
+			<td style="color: whitesmoke;">{{data.age}}</td>
+            <td style="color: whitesmoke;">{{data.hr}}</td>
+            <td style="color: whitesmoke;">{{data.resp}}</td>
+            <td style="color: whitesmoke;">{{data.spo2}}</td>
+            <td style="color: whitesmoke;">{{data.temp}}</td>
+            <td style="color: whitesmoke;">{{data.pred}}</td>
+            <td style="color: whitesmoke;">{{data.suggestion}}</td>
+			<td style="color: whitesmoke;"><a href="/delete/{{data.inde}}" type="button">Delete</a></td>
+		</tbody>
+		{% endfor%}
+	</table>
+</body>
+</html>

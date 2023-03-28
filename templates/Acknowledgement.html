@@ -1,0 +1,46 @@
+<html>
+<style>
+	table, th, td {
+	  border:1px solid whitesmoke;
+	}
+	body {
+  background-image: url("https://www.med-technews.com/downloads/6737/download/digital%20health.png?cb=7b6322e5ada6a48d6990adc3f1e5078e");
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+</style>
+<head>
+	<title>success</title>
+</head>
+<body>
+	<p style="font-size:300%;color:white;text-align:center;">Critical Decision Support System Prediction</p>
+	<p style="font-size:150%;color: white;">File uploaded successfully</p>
+	<p style="font-size:150%;color: white;">File Name: {{name}}</p>
+	<p style="font-size:150%;color: white;">No. of Available ICU Beds</p>
+	<p style="font-size:150%;color: white;">Availability: {{icuBed}}</p>
+	<p style="font-size:150%;color: white;">No. of Available General Ward Beds</p>
+	<p style="font-size:150%;color: white;">Availability: {{genBed}}</p>
+	<p style="font-size:180%;color: white;">Below is the prediction</p>
+	<table style="width:60%;font-size:160%;">
+		<tr>
+		  <th style="color: whitesmoke;">{{tableheader1}}</th>
+		  <th style="color: whitesmoke;">{{tableheader2}}</th>
+		  <th style="color: whitesmoke;">{{tableheader3}}</th>
+		</tr>
+
+		<ol>
+			<!-- For loop logic of jinja template -->
+			{%for i in range(0, len)%}
+			  
+				<tr>
+					<td style="color: whitesmoke;">{{predictedValues[i][0]}}</td>
+					<td style="color: whitesmoke;">{{predictedValues[i][1]}}</td>
+					<td style="color: whitesmoke;">{{reqAct[i]}}</td>
+				</tr>
+			{%endfor%}
+			  
+			</ol>
+	  </table>
+</body>
+</html>
